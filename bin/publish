@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+tagname=$1
+if [[ -z $tagname ]];
+then
+  echo 'Usage: ./bin/publish [tagname]'
+  exit 1
+fi
+docker tag lua-dev-env:$tagname mmaarouf/lua-dev-env:$tagname
+docker push mmaarouf/lua-dev-env:$tagname
